@@ -1,0 +1,56 @@
+import React from "react";
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import Home from "./pages/home";
+import Story from "./pages/story";
+import Verticals from "./pages/verticals";
+import Team from "./pages/team";
+import Catalyst from "./pages/catalyst";
+import Contact from "./pages/contact";
+import Gulf from "./pages/nanbangulf";
+import Media from "./pages/media";
+import Press from "./pages/press";
+import RecentNews from "./pages/recent-news";
+import MediaCoverage from "./pages/media-coverage";
+import PressRoom from "./pages/pressroom";
+import Ambassador from "./pages/nanban-ambassador";
+
+import NotFound from "./pages/not-found";
+import Header from "./components/common/header";
+import Footer from "./components/common/footer";
+
+import './assets/css/styles.css';
+
+import './assets/js/scripts.js';  
+
+
+function App() {
+//  window.onpopstate = function (e) { window.history.forward(0); }
+console.log(window.location.pathname);
+
+  return (
+    <Router forceRefresh={true}>
+    <Header />   
+      <main>
+        <Switch>
+        <Route exact path="/" component={Home} />
+          <Route path="/story" component={Story} />
+          <Route path="/nanbangulf" component={Gulf} />          
+          <Route path="/verticals" component={Verticals} />
+          <Route path="/team" component={Team} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/Catalyst" component={Catalyst} />
+          <Route path="/media" component={Media} />
+          <Route path="/press" component={Press} />
+          <Route path="/news" component={PressRoom} />
+          <Route path="/recent-news" component={RecentNews} />
+          <Route path="/media-coverage" component={MediaCoverage} />
+          <Route path="/nanban-ambassador" component={Ambassador} />
+          <Route path="/not-found" component={NotFound} />
+        </Switch>
+      </main>
+      <Footer />
+    </Router>
+  );
+}
+
+export default App;
